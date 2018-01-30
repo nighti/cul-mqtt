@@ -36,7 +36,7 @@ class CULMQTT(object):
         self._cul.send("X01")
         # set up MQTT client
         self._client = paho.Client(client_id=self._mqtt_client_id)
-        if self._password and self._username:
+        if self._password !="" and self._username !="":
             self._client.username_pw_set(self._username, self._password)
         self._client.on_message = self.on_mqtt_recv
         self._client.connect(self._mqtt_broker, 1883)
